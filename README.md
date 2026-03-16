@@ -22,3 +22,12 @@ This repository showcases a cloud-native platform setup for deploying and managi
 ├── .gitignore
 ├── LICENSE
 └── README.md
+
+
+## Architecture
+
+- Terraform provisions cloud infrastructure for the Kubernetes platform
+- Kubernetes manifests deploy AI/LLM inference workloads
+- Prometheus provides monitoring configuration
+- GitHub Actions validates and automates deployment workflows
+- Shell scripts simplify operational tasks and deployments
