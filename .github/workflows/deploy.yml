@@ -1,0 +1,28 @@
+name: Deploy CloudForge Platform
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Kubernetes manifests
+        run: |
+          echo "Validating Kubernetes manifests"
+          ls kubernetes
+
+      - name: Validate Terraform files
+        run: |
+          echo "Validating Terraform files"
+          ls terraform
+
+      - name: Run deployment script
+        run: |
+          chmod +x scripts/deploy.sh
+          ./scripts/deploy.sh
